@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RATNER</title>
+
+  <!-- Подключаем CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Видео задний фон -->
+  <video id="bg-video" autoplay loop muted playsinline>
+    <source src="IMG_2378.MP4" type="video/mp4">
+    Ваш браузер не поддерживает видео фон 😢
+  </video>
+
+  <!-- Затемнение -->
+  <div class="overlay"></div>
+
+  <!-- Кнопка музыки -->
+  <button id="music-btn">🎵 Включить музыку</button>
+  <audio id="bg-music" loop>
+    <source src="IMG_2378.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Контент -->
+  <div class="content">
+     <div class="left-text">
+      <p>
+        Иногда стены начинают дышать, и я слышу, как они шепчут мое имя, будто знают, что я спряталась.<br><br>
+        Голоса становятся громче ночью — они спорят, кто из них настоящий.<br><br>
+        Я пытаюсь не смотреть в зеркало, потому что отражение уже давно не делает то, что делаю я.<br><br>
+        Иногда я думаю, что выдумала весь этот мир, чтобы не признать, что выдумана сама.<br><br>
+        А утром все затихает — до следующего раза, когда реальность снова забудет, кем она должна быть.
+      </p>
+    </div>
+    <div class="container">
+      <button onclick="window.open('https://www.instagram.com/ratnerheadmassacre?igsh=MThnbnl4aWR4aDdzaQ%3D%3D&utm_source=qr', '_blank')">
+        <img src="IMG_2387.png" alt="Inst*">
+      </button>
+      <button onclick="window.open('https://t.me/ratnerr', '_blank')">
+        <img src="IMG_2386.png" alt="TGchannel">
+      </button>
+    </div>
+  </div>
+
+  <footer>
+   Ratnerheadmassacre:3
+  </footer>
+
+  <script>
+  // Управление музыкой
+  const btn = document.getElementById('music-btn');
+  const music = document.getElementById('bg-music');
+
+  btn.addEventListener('click', () => {
+    if (music.paused) {
+      music.play();
+      btn.textContent = "🔇 Выключить музыку";
+    } else {
+      music.pause();
+      btn.textContent = "🎵 Включить музыку";
+    }
+  });
+  </script>
+
+<script>
+  // Управление музыкой с пониженной громкостью
+const btn = document.getElementById('music-btn');
+const music = document.getElementById('bg-music');
+
+btn.addEventListener('click', () => {
+  if (music.paused) {
+    music.volume = 0.5; // устанавливаем громкость при первом воспроизведении
+    music.play();
+    btn.textContent = "🔇 Выключить музыку";
+  } else {
+    music.pause();
+    btn.textContent = "🎵 Включить музыку";
+  }
+});
+  </script>
+
+</body>
+</html>
